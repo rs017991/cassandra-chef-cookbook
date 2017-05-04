@@ -11,6 +11,11 @@ provisioner:
       notify_restart: true
       config:
         cluster_name: test
+      local_jmx: false
+      jmx_remote_authenticate: true
+      jmx:
+        user: lol
+        password: wut
     java:
       jdk_version: 8
 
