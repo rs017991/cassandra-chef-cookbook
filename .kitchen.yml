@@ -4,12 +4,20 @@ driver:
 
 provisioner:
   name: chef_zero
+  require_chef_omnibus: '12.13.37'
   attributes:
     cassandra:
       setup_jamm: true
       notify_restart: true
       config:
         cluster_name: test
+      local_jmx: false
+      jmx_remote_authenticate: true
+      jmx:
+        user: lol
+        password: wut
+    java:
+      jdk_version: 8
 
 platforms:
   - name: ubuntu-14.04
